@@ -34,6 +34,12 @@ const generateID = () => {
   return String(maxId + 1);
 };
 
+app.get("/", (req, res) => {
+  res.send(
+    "<h1>Phonebook API</h1><p>Go to <code>/api/persons</code> for data.</p>"
+  );
+});
+
 app.get("/api/persons", (request, response) => {
   response.json(persons);
 });
